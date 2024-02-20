@@ -1,15 +1,24 @@
-# Covlab
+# Covlab:An Online Tool for Monitoring and Understanding COVID-19 Based on Self-reporting Tweets and Large Language Models
+### Summary
+Background Emergence of new SARS-CoV-2 variants and the resulting reinfections and long COVID continue to impact many people's lives. Tracking websites like Johns Hopkins University no longer report the daily confirmed cases, posing challenges in accurately determining the true extent of infection cases. Many COVID-19 cases with mild symptoms are self-assessed at home and reported on social media, which provides an opportunity to monitor and understand the progression and evolving trends of the disease.
+
+### Methods 
+We used X (formerly Twitter) to collect COVID-related data, from which nine native English-speaking annotators annotated a training dataset of COVID-positive self-reporters. We then used Large Language Models (LLMs) to identify positive self-reporters from other unannotated tweets. We employed the Hibert transform to calculate the lead of the prediction curve ahead of the reported curve. Finally, we presented the findings on symptoms, recovery, reinfections, and long-term effects of COVID-19 on the website Covlab (https://covlab.tech).
+
+### Findings 
+We collected 7·3 million tweets related to COVID-19 between January 1, 2020, and April 1, 2023, including 238,993 self-reported cases. The predicted number of infection cases by our model is 7·63 days ahead of the official report. In addition to common symptoms, we identified some symptoms that were not included in the list from the Centers for Disease Control and Prevention (CDC), such as lethargy and hallucinations. Repeat infections were commonly occurring, with rates of second and third infections at 7·49% and 1·37%, respectively, while 0·45% also reported that they had been infected more than five times. The average time to recovery has decreased over the years.
+
+### Interpretation 
+Albeit with some biases and limitations, self-reported tweet data serves as a valuable complement to clinical data, especially in the post-pandemic era dominated by mild cases. Our online analytic platform can play a significant role in continuously tracking COVID-19, finding new uncommon symptoms, detecting and monitoring the manifestation of long-term effects, and providing necessary insights to the public and decision-makers.
+##
 ![Figure 1  Workflow of Covlab online tool](https://github.com/orangeshushu/Covlab/assets/8640422/0e2a9589-9d24-40ba-9016-ad5baa3876ee)
-
-
+**Figure 1. Workflow of "Covlab" online tool. Data collection: Collect COVID-19-related tweets and manually labelled some tweets as the training set. LLM Training: Model selection and training based on annotated datasets to identify the most optimal performing model. Subsequently, self-reported COVID-19 infection tweets were identified from a pool of tweets related to COVID-19. Tracking: Long-term tracking of all individuals who self-report COVID-19 infection in tweets extracts mentioned symptoms, recovery progress, long-term effects, and geographical location information from their tweets. Visualization website: Display the results of the above analyses.**
+##
 ![Fig3](https://github.com/orangeshushu/Covlab/assets/8640422/e33e551c-73c3-4408-b609-bf12fcc12168)
-
-
-
-![Figure 3  All symptoms mentioned by self-reporting tweets](https://github.com/orangeshushu/Covlab/assets/8640422/4fc00f61-2965-4ad7-b8e3-9db05a3131ec)
-
-
-
-
-
+**Figure 2. Real cases and predicted cases curves. The blue curve represents the actual daily confirmed cases, and the red curve represents the daily predicted cases. The shaded areas above and below the red and blue curves represent the confidence intervals (CI). The red text represents key events during the outbreak, and the brown text represents the time at which the variant appeared. The blue shaded area on the right side represents the period during which actual confirmed case data is missing. The red solid line represents the daily self-reported COVID-19 infection numbers.**
+##
+![Figure 3  All symptoms mentioned by self-reporting tweets(1)](https://github.com/orangeshushu/Covlab/assets/8640422/48d6e9b3-6c92-4c99-91b9-d31b97adc747)
+**Figure 3. All symptoms mentioned by self-reporting tweets and the correlations between symptoms. (A) represents the number of mentions of COVID-19 symptoms in self-reported tweets over time. (B) represents the percentage of symptoms in all self-reporting covid tweets, and multiple symptoms can be mentioned in one tweet. Abbreviations: shortness of breath (SB), generalized body ache (GBA), difficulty breathing (DB), disorder of smell/taste (DST). (C) represents the correlations between symptoms mentioned by the same user. (D) represents a heat map of Pearson correlation coefficients between symptoms. (E) represents the symptoms word cloud.**
+##
 ![Fig5 字体调整](https://github.com/orangeshushu/Covlab/assets/8640422/8b29ea0b-4bae-43f3-9cce-6fd2b832e8b0)
+**Figure 4. Overview of reinfections and recovery. (A) Kaplan–Meier Estimates of Cumulative Recoveries. (B) Rehabilitation days in different years. (C) Time to reinfection for 238,993 individuals. (D) Reinfection cases and rates.**
